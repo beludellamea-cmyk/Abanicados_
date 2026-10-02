@@ -1,0 +1,14 @@
+Subí acá las fotos de cada abanico con EXACTAMENTE estos nombres
+(en minúscula, sin tildes). Si una foto falta, la página muestra
+un recuadro con el nombre del modelo en su lugar.
+
+aire.jpg        camelia.jpg     orquidea.jpg    magnolia.jpg
+marimonia.jpg   hibisco.jpg     azalea.jpg      nairobi.jpg
+tokio.jpg       florencia.jpg   moscu.jpg       esmeralda.jpg
+turquia.jpg     rubi.jpg        arena.jpg       tinto.jpg
+onix.jpg        nimbo.jpg       ebano.jpg       carmesi.jpg
+champagne.jpg   perla.jpg
+
+Recomendado: fotos verticales (4:5), de unos 1200 px de alto,
+comprimidas (menos de 300 KB). Si usás .png o .webp, cambiá la
+extensión en products.js.
