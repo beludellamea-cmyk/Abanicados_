@@ -40,32 +40,32 @@ const PRODUCTOS = [
   // Aire es de la cápsula Argentina (única de esa cápsula) → va en Estampados. NO es Premium.
   { nombre: "Aire",      imagen: "images/aire.jpg",      coleccion: "Argentina", categoria: "estampados", tipo: "standard", stock: 1 },
 
-  { nombre: "Camelia",   imagen: "images/camelia.jpg",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
+  { nombre: "Camelia",   imagen: "images/camelia.jpg",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Orquídea",  imagen: "images/orquidea.jpg",  coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
   { nombre: "Magnolia",  imagen: "images/magnolia.jpg",  coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
   { nombre: "Marimonia", imagen: "images/marimonia.jpg", coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
   { nombre: "Hibisco",   imagen: "images/hibisco.jpg",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
-  { nombre: "Azalea",    imagen: "images/azalea.jpg",    coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 2 },
+  { nombre: "Azalea",    imagen: "images/azalea.jpg",    coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
 
-  { nombre: "Nairobi",   imagen: "images/nairobi.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 8 },
-  { nombre: "Tokio",     imagen: "images/tokio.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 2 },
-  { nombre: "Florencia", imagen: "images/florencia.jpg", coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 1 },
+  { nombre: "Nairobi",   imagen: "images/nairobi.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 7 },
+  { nombre: "Tokio",     imagen: "images/tokio.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
+  { nombre: "Florencia", imagen: "images/florencia.jpg", coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Moscú",     imagen: "images/moscu.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 2 },
   { nombre: "Turquía",   imagen: "images/turquia.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 1 },
 
   // ---------- COLORES (lisos) ----------
   { nombre: "Esmeralda", imagen: "images/esmeralda.jpg", coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 1 },
   { nombre: "Rubí",      imagen: "images/rubi.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 1 },
-  { nombre: "Arena",     imagen: "images/arena.jpg",     coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 1 },
+  { nombre: "Arena",     imagen: "images/arena.jpg",     coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
   { nombre: "Tinto",     imagen: "images/tinto.jpg",     coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 1 },
-  { nombre: "Ónix",      imagen: "images/onix.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 4 },
+  { nombre: "Ónix",      imagen: "images/onix.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 3 },
 
   // ---------- PREMIUM ----------
   // Nimbo es el ÚNICO Dual.
   { nombre: "Nimbo",     imagen: "images/nimbo.jpg",     coleccion: "Dual",      categoria: "premium",    tipo: "dual",     stock: 2 },
 
   // Velvet
-  { nombre: "Ébano",     imagen: "images/ebano.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 12 },
+  { nombre: "Ébano",     imagen: "images/ebano.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 11 },
   { nombre: "Carmesí",   imagen: "images/carmesi.jpg",   coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 5 },
   { nombre: "Champagne", imagen: "images/champagne.jpg", coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 6 },
   { nombre: "Perla",     imagen: "images/perla.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 5 }
