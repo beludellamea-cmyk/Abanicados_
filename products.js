@@ -44,21 +44,21 @@ const PRODUCTOS = [
   { nombre: "Orquídea",  imagen: "images/orquidea.jpg",  coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
   { nombre: "Magnolia",  imagen: "images/magnolia.jpg",  coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
   { nombre: "Marimonia", imagen: "images/marimonia.jpg", coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
-  { nombre: "Hibisco",   imagen: "images/hibisco.jpg",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
+  { nombre: "Hibisco",   imagen: "images/hibisco.jpg",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Azalea",    imagen: "images/azalea.jpg",    coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
 
-  { nombre: "Nairobi",   imagen: "images/nairobi.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 7 },
+  { nombre: "Nairobi",   imagen: "images/nairobi.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 6 },
   { nombre: "Tokio",     imagen: "images/tokio.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Florencia", imagen: "images/florencia.jpg", coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Moscú",     imagen: "images/moscu.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 2 },
-  { nombre: "Turquía",   imagen: "images/turquia.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 1 },
+  { nombre: "Turquía",   imagen: "images/turquia.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
 
   // ---------- COLORES (lisos) ----------
   { nombre: "Esmeralda", imagen: "images/esmeralda.jpg", coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 1 },
   { nombre: "Rubí",      imagen: "images/rubi.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
   { nombre: "Arena",     imagen: "images/arena.jpg",     coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
   { nombre: "Tinto",     imagen: "images/tinto.jpg",     coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 1 },
-  { nombre: "Ónix",      imagen: "images/onix.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 3 },
+  { nombre: "Ónix",      imagen: "images/onix.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 2 },
 
   // ---------- PREMIUM ----------
   // Nimbo es el ÚNICO Dual.
