@@ -38,7 +38,7 @@ const CONFIG = {
 const PRODUCTOS = [
   // ---------- ESTAMPADOS ----------
   // Aire es de la cápsula Argentina (única de esa cápsula) → va en Estampados. NO es Premium.
-  { nombre: "Aire",      imagen: "images/aire.jpg",      coleccion: "Argentina", categoria: "estampados", tipo: "standard", stock: 1 },
+  { nombre: "Aire",      imagen: "images/aire.jpg",      coleccion: "Argentina", categoria: "estampados", tipo: "standard", stock: 0 },
 
   { nombre: "Camelia",   imagen: "images/camelia.jpg",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Orquídea",  imagen: "images/orquidea.jpg",  coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
