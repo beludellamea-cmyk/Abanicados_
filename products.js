@@ -41,13 +41,13 @@ const PRODUCTOS = [
   { nombre: "Aire",      imagen: "images/aire.jpg",      coleccion: "Argentina", categoria: "estampados", tipo: "standard", stock: 0 },
 
   { nombre: "Camelia",   imagen: "images/camelia.jpg",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
-  { nombre: "Orquídea",  imagen: "images/orquidea.jpg",  coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
+  { nombre: "Orquídea",  imagen: "images/orquidea.jpg",  coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Magnolia",  imagen: "images/magnolia.jpg",  coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
   { nombre: "Marimonia", imagen: "images/marimonia.jpg", coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
   { nombre: "Hibisco",   imagen: "images/hibisco.jpg",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Azalea",    imagen: "images/azalea.jpg",    coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 1 },
 
-  { nombre: "Nairobi",   imagen: "images/nairobi.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 6 },
+  { nombre: "Nairobi",   imagen: "images/nairobi.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 5 },
   { nombre: "Tokio",     imagen: "images/tokio.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Florencia", imagen: "images/florencia.jpg", coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Moscú",     imagen: "images/moscu.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 2 },
