@@ -71,7 +71,9 @@
   }
 
   function render() {
-    const lista = filtroActual === "todos" ? PRODUCTOS : PRODUCTOS.filter((p) => p.categoria === filtroActual);
+    const lista = (filtroActual === "todos" ? PRODUCTOS : PRODUCTOS.filter((p) => p.categoria === filtroActual))
+      .slice()
+      .sort((a, b) => Number(b.stock > 0) - Number(a.stock > 0));
     grid.innerHTML = lista.map(tarjetaHTML).join("");
     phrase.textContent = FRASES[filtroActual];
   }
