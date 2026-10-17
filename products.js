@@ -58,15 +58,15 @@ const PRODUCTOS = [
   { nombre: "Rubí",      imagen: "images/rubi.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
   { nombre: "Arena",     imagen: "images/arena.jpg",     coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
   { nombre: "Tinto",     imagen: "images/tinto.jpg",     coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
-  { nombre: "Ónix",      imagen: "images/onix.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 1 },
+  { nombre: "Ónix",      imagen: "images/onix.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
 
   // ---------- PREMIUM ----------
   // Nimbo es el ÚNICO Dual.
   { nombre: "Nimbo",     imagen: "images/nimbo.jpg",     coleccion: "Dual",      categoria: "premium",    tipo: "dual",     stock: 2 },
 
   // Velvet
-  { nombre: "Ébano",     imagen: "images/ebano.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 10 },
-  { nombre: "Carmesí",   imagen: "images/carmesi.jpg",   coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 4 },
+  { nombre: "Ébano",     imagen: "images/ebano.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 9 },
+  { nombre: "Carmesí",   imagen: "images/carmesi.jpg",   coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 3 },
   { nombre: "Champagne", imagen: "images/champagne.jpg", coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 6 },
   { nombre: "Perla",     imagen: "images/perla.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 5 }
 ];
