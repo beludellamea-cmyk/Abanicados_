@@ -50,7 +50,7 @@ const PRODUCTOS = [
   { nombre: "Nairobi",   imagen: "images/nairobi.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 4 },
   { nombre: "Tokio",     imagen: "images/tokio.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Florencia", imagen: "images/florencia.jpg", coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
-  { nombre: "Moscú",     imagen: "images/moscu.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 2 },
+  { nombre: "Moscú",     imagen: "images/moscu.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 1 },
   { nombre: "Turquía",   imagen: "images/turquia.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
 
   // ---------- COLORES (lisos) ----------
