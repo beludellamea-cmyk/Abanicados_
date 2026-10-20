@@ -65,7 +65,7 @@ const PRODUCTOS = [
   { nombre: "Nimbo",     imagen: "images/nimbo.jpg",     coleccion: "Dual",      categoria: "premium",    tipo: "dual",     stock: 2 },
 
   // Velvet
-  { nombre: "Ébano",     imagen: "images/ebano.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 9 },
+  { nombre: "Ébano",     imagen: "images/ebano.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 7 },
   { nombre: "Carmesí",   imagen: "images/carmesi.jpg",   coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 3 },
   { nombre: "Champagne", imagen: "images/champagne.jpg", coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 6 },
   { nombre: "Perla",     imagen: "images/perla.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 5 }
