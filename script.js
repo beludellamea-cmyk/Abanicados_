@@ -168,3 +168,47 @@
     }
   } catch (_) { /* Un enlace mal formado no debe interrumpir el catálogo. */ }
 })();
+
+
+/* Animación decorativa independiente: nunca bloquea el catálogo. */
+(() => {
+  "use strict";
+  const iniciar = () => {
+    const splash = document.getElementById("intro");
+    const fan = document.getElementById("intro-fan");
+    const logo = document.querySelector(".logo .logo-fan");
+    if (!splash || !fan || !logo) return;
+    let terminado = false;
+    const terminar = () => {
+      if (terminado) return;
+      terminado = true;
+      splash.classList.add("intro-dismiss");
+      logo.style.animation = "none";
+      logo.style.opacity = "1";
+      window.setTimeout(() => splash.remove(), 400);
+    };
+    // Ruta de seguridad aunque una animación no pueda iniciarse o completarse.
+    window.setTimeout(terminar, 3050);
+    const reducida = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducida || window.location.hash) { terminar(); return; }
+    window.setTimeout(() => {
+      try {
+        if (!fan.animate) { terminar(); return; }
+        const a = fan.getBoundingClientRect();
+        const b = logo.getBoundingClientRect();
+        const dx = (b.left + b.width / 2) - (a.left + a.width / 2);
+        const dy = (b.top + b.height / 2) - (a.top + a.height / 2);
+        const scale = Math.min(b.width / a.width, b.height / a.height);
+        if (![dx,dy,scale].every(Number.isFinite)) { terminar(); return; }
+        const viaje = fan.animate([
+          {transform:"translate3d(0,0,0) scale(1)",opacity:1},
+          {transform:"translate3d(0,-10px,0) scale(.98)",opacity:1,offset:.16},
+          {transform:`translate3d(${dx}px,${dy}px,0) scale(${scale})`,opacity:1}
+        ],{duration:800,easing:"cubic-bezier(.2,.75,.23,1)",fill:"forwards"});
+        viaje.finished.then(terminar).catch(terminar);
+      } catch (_) { terminar(); }
+    }, 1450);
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", iniciar, {once:true});
+  else iniciar();
+})();
