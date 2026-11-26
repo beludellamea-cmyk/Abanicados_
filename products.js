@@ -32,6 +32,7 @@ const CONFIG = {
              dual y velvet cobran precioPremium; standard cobra precioStandard.
   stock:     unidades reales en mano. 'Próximo ingreso' siempre usa stock 0.
              más de 1 → DISPONIBLE · 1 → ÚLTIMA UNIDAD · 0 → AGOTADO.
+  reservado: unidades en existencia apartadas para clientes; no se ofrecen a la venta.
   proximo:   true cuando el modelo está en camino. No suma al stock disponible.
   tamano:    (opcional) si algún modelo mide distinto, agregalo acá.
 */
@@ -76,7 +77,7 @@ const PRODUCTOS = [
   { nombre: "Nero",      imagen: "images/nero.webp",      coleccion: "Dual", categoria: "premium", tipo: "dual", stock: 0, proximo: true },
 
   // Velvet
-  { nombre: "Ébano",     imagen: "images/ebano.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 6 },
+  { nombre: "Ébano",     imagen: "images/ebano.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 5, reservado: 1 },
   { nombre: "Carmesí",   imagen: "images/carmesi.jpg",   coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 1 },
   { nombre: "Champagne", imagen: "images/champagne.jpg", coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 5 },
   { nombre: "Perla",     imagen: "images/perla.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 5 }

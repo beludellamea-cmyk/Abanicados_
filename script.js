@@ -6,10 +6,10 @@
   const whatsapp = CONFIG.whatsapp;
 
   const FRASES = {
-    todos: "Acá empieza el problema: elegir.",
-    estampados: "Para pasar calor, no desapercibido.",
-    colores: "Hoy combinamos. Mañana vemos.",
-    premium: "El extra que claramente necesitabas."
+    todos: "Una colección pensada para brillar en cada ocasión.",
+    estampados: "Estampados para destacar en cualquier celebración.",
+    colores: "Colores lisos que combinan con todo tu look.",
+    premium: "Modelos premium para una noche especial."
   };
 
   const escapar = (valor = "") => String(valor).replace(/[&<>'"]/g, (c) => ({
@@ -19,11 +19,15 @@
   const precioDe = (p) => (p.tipo === "dual" || p.tipo === "velvet") ? CONFIG.precioPremium : CONFIG.precioStandard;
   const formatearPrecio = (n) => new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 0 }).format(n);
 
+  function disponiblesDe(p) {
+    return Math.max(0, (Number(p.stock) || 0) - (Number(p.reservado) || 0));
+  }
   function disponibilidad(p) {
     if (p.proximo) return { texto: "Próximo ingreso", clase: "soon", agotado: false, proximo: true };
-    if (p.stock <= 0) return { texto: "Agotado", clase: "out", agotado: true };
-    if (p.stock === 1) return { texto: "Última unidad", clase: "last", agotado: false };
-    return { texto: "Disponible", clase: "ok", agotado: false };
+    const libres = disponiblesDe(p);
+    if (libres <= 0) return { texto: "Agotado", clase: "out", agotado: true };
+    if (libres === 1) return { texto: "Última unidad", clase: "last", agotado: false };
+    return { texto: p.reservado ? libres + " disponibles" : "Disponible", clase: "ok", agotado: false };
   }
 
   function tipoVisible(p) {
@@ -58,14 +62,18 @@
 
   function tarjetaHTML(p) {
     const d = disponibilidad(p);
+    const extra = caracteristica(p);
     return `
       <article class="card${d.agotado ? " is-out" : ""}${d.proximo ? " is-soon" : ""}">
         <button type="button" class="card-photo" data-detalle="${p._id}" aria-label="Ver ${escapar(p.nombre)}">
-          <img src="${escapar(p.imagen)}" alt="Abanico ${escapar(p.nombre)}" decoding="async" onerror="this.style.display='none'">
+          <img src="${escapar(p.imagen)}" alt="Abanico ${escapar(p.nombre)}" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <span class="photo-glow" aria-hidden="true"></span>
           ${d.proximo ? '<span class="soon-ribbon">PRÓXIMO INGRESO</span>' : ""}
         </button>
-        <button type="button" class="card-body" data-detalle="${p._id}" aria-label="Ver detalles de ${escapar(p.nombre)}" style="border:0;background:none;width:100%;text-align:left;cursor:pointer">
+        <button type="button" class="card-body" data-detalle="${p._id}" aria-label="Ver detalles de ${escapar(p.nombre)}">
+          <p class="card-collection">${escapar(tipoVisible(p))}</p>
           <h3 class="card-name">${escapar(p.nombre)}</h3>
+          ${extra ? `<p class="card-feature">${escapar(extra)}</p>` : ""}
           <div class="card-row">
             <p class="card-price">${formatearPrecio(precioDe(p))}</p>
             <span class="status status-${d.clase}">${d.texto}</span>
@@ -78,11 +86,12 @@
     const lista = (filtroActual === "todos" ? PRODUCTOS : PRODUCTOS.filter((p) => p.categoria === filtroActual))
       .slice()
       .sort((a, b) => {
-        const rango = (p) => p.proximo ? 1 : (p.stock > 0 ? 0 : 2);
+        const rango = (p) => p.proximo ? 1 : (disponiblesDe(p) > 0 ? 0 : 2);
         return rango(a) - rango(b);
       });
     grid.innerHTML = lista.map(tarjetaHTML).join("");
     phrase.textContent = FRASES[filtroActual];
+    activarReveladoTarjetas();
   }
 
   $$(".filters button").forEach((btn) => {
@@ -133,6 +142,7 @@
           <div><dt>Pago</dt><dd>Transferencia o efectivo</dd></div>
           <div><dt>Entrega</dt><dd>Coordinamos por WhatsApp</dd></div>
         </dl>
+        ${p.reservado ? `<p class="detail-reserved">Unidades reservadas: ${p.reservado}. Disponibles para comprar: ${disponiblesDe(p)}.</p>` : ""}
         <div class="detail-actions">
           ${d.agotado
             ? `<span class="action-primary disabled">AGOTADO</span>`
@@ -196,7 +206,30 @@
     }, 1900);
   }
 
+  function activarReveladoTarjetas() {
+    $(".card").forEach((card, i) => {
+      card.style.setProperty("--delay", Math.min(i * 45, 280) + "ms");
+      requestAnimationFrame(() => card.classList.add("is-visible"));
+    });
+  }
+  function activarReveal() {
+    const items = $(".reveal");
+    if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      items.forEach(el => el.classList.add("is-visible"));
+      return;
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: .1});
+    items.forEach(el => observer.observe(el));
+  }
   render();
+  activarReveal();
   runIntro();
 
   const hash = decodeURIComponent(location.hash || "");
