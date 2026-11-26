@@ -260,3 +260,65 @@ button{font:inherit}
   .fan-leaf{transform:rotate(var(--fan-angle))!important;opacity:1!important}
   .fan-base{opacity:1!important}
 }
+
+
+/* Intro animada: apertura en el centro y regreso al logo. No bloquea el catálogo. */
+.intro-splash{
+  position:fixed;inset:0;z-index:1000;display:grid;place-items:center;
+  pointer-events:none;overflow:hidden;color:#fff6ea;
+  background:radial-gradient(circle at 50% 43%,#684052 0%,#422938 42%,#241923 100%);
+  animation:introSafety 0s linear 3.15s forwards;
+}
+.intro-splash.intro-dismiss{animation:none!important;opacity:0!important;visibility:hidden!important;transition:opacity .32s ease,visibility .32s ease}
+@keyframes introSafety{to{opacity:0;visibility:hidden}}
+.intro-halo{position:absolute;width:min(82vw,600px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(245,220,177,.21);box-shadow:0 0 0 45px rgba(245,220,177,.035),inset 0 0 90px rgba(239,188,140,.09);pointer-events:none}
+.intro-center{position:relative;text-align:center;margin-top:10px}
+.intro-fan{width:min(76vw,385px);margin:0 auto;transform-origin:center center;will-change:transform;filter:drop-shadow(0 20px 30px rgba(20,7,16,.3))}
+.intro-lux-fan{display:block;width:100%;height:auto;overflow:visible}
+.intro-splash .fan-leaf{transform-origin:300px 363px;transform-box:view-box;animation:fanUnfold 1120ms cubic-bezier(.22,.88,.26,1.04) both;animation-delay:var(--leaf-delay,0ms)}
+.intro-splash .fan-base{opacity:0;animation:fadeIn .4s ease .8s forwards}
+.intro-brand{font:400 clamp(2.5rem,8vw,4.7rem)/1 'Italiana',Georgia,serif;letter-spacing:.13em;margin-top:-4px}
+.intro-tagline{margin:8px 0 0;font-size:.81rem;letter-spacing:.15em;color:#ebcda7}
+.intro-spark{position:absolute;color:#efd6ac;opacity:.7;animation:floatLight 3s ease-in-out infinite}
+.intro-spark-one{left:12%;top:22%;font-size:1.6rem}
+.intro-spark-two{right:13%;bottom:25%;font-size:1.5rem;animation-delay:.7s}
+.logo .logo-fan.mini-lux-fan{
+  width:56px;height:51px;flex:0 0 56px;overflow:visible;opacity:0;
+  animation:logoSafety 0s linear 3.15s forwards;
+}
+@keyframes logoSafety{to{opacity:1}}
+.logo .mini-lux-fan .fan-leaf{animation:none!important;transform:rotate(var(--fan-angle))!important;opacity:1!important}
+.logo .mini-lux-fan .fan-base{animation:none!important;opacity:1!important}
+.logo:hover .mini-lux-fan{transform:rotate(-5deg)}
+.hero-art.hero-showcase{min-height:490px;position:relative;display:block;isolation:isolate}
+.hero-showcase:before{content:"";position:absolute;inset:5% 5% 12%;border:1px solid rgba(244,213,176,.2);border-radius:50%;transform:rotate(-20deg)}
+.hero-showcase:after{content:"";position:absolute;width:62%;aspect-ratio:1;left:13%;top:18%;background:radial-gradient(circle,rgba(241,183,149,.28),transparent 67%);filter:blur(17px);z-index:-1}
+.showcase-photo{position:absolute;margin:0;border:7px solid #f9eee3;border-bottom-width:28px;border-radius:8px;overflow:hidden;background:#ecded1;box-shadow:0 23px 45px rgba(14,8,13,.32)}
+.showcase-photo img{width:100%;height:100%;object-fit:cover}
+.showcase-primary{width:66%;height:70%;left:8%;top:10%;transform:rotate(-9deg);z-index:2}
+.showcase-secondary{width:45%;height:52%;right:1%;top:30%;transform:rotate(12deg);z-index:3}
+.showcase-primary figcaption{position:absolute;bottom:-24px;left:12px;font:800 .7rem/1 var(--body);color:#815365;letter-spacing:.17em}
+.showcase-primary figcaption span{font-weight:500}
+.showcase-spark{position:absolute;color:#edd4a9;font-size:1.5rem;z-index:4;animation:floatLight 4s ease-in-out infinite}
+.showcase-spark-a{right:8%;top:12%}.showcase-spark-b{left:4%;bottom:14%;animation-delay:1s}
+.showcase-caption{position:absolute;right:3%;bottom:8%;font-size:.67rem;letter-spacing:.24em;color:#f4d5b3;font-weight:800}
+@media(max-width:760px){
+  .hero-art.hero-showcase{min-height:355px;max-width:430px;width:100%;margin-inline:auto}
+  .showcase-primary{width:64%;height:74%;top:7%;left:11%}
+  .showcase-secondary{width:44%;height:54%;top:29%;right:4%}
+  .showcase-caption{bottom:3%;right:8%}
+  .logo .logo-fan.mini-lux-fan{width:49px;height:45px;flex-basis:49px}
+}
+@media(max-width:430px){
+  .intro-fan{width:min(80vw,300px)}
+  .intro-brand{font-size:2.75rem}
+  .hero-art.hero-showcase{min-height:280px}
+  .showcase-photo{border-width:5px;border-bottom-width:20px}
+  .showcase-primary figcaption{bottom:-17px;font-size:.55rem}
+  .logo .logo-fan.mini-lux-fan{width:43px;height:40px;flex-basis:43px}
+}
+@media(prefers-reduced-motion:reduce){
+  .intro-splash{display:none!important}
+  .logo .logo-fan.mini-lux-fan{opacity:1!important;animation:none!important}
+  .intro-splash .fan-leaf{transform:rotate(var(--fan-angle))!important;animation:none!important;opacity:1!important}
+}
