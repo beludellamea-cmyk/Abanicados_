@@ -257,7 +257,7 @@ img { display: block; max-width: 100%; }
 .card:hover .card-photo img { transform: scale(1.025); }
 .card-body { padding: .74rem .8rem .86rem; }
 .card-name { margin: 0; color: var(--olive); font: 600 clamp(1.02rem,4vw,1.2rem)/1.15 var(--display); }
-.card-row { display: flex; align-items: baseline; justify-content: space-between; gap: .4rem; margin-top: .42rem; }
+.card-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .4rem; margin-top: .42rem; }
 .card-price { margin: 0; font-weight: 700; font-size: .92rem; }
 .status { font-size: .58rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--olive-2); white-space: nowrap; }
 .status-last { color: var(--terracotta-2); }
@@ -344,4 +344,27 @@ img { display: block; max-width: 100%; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration:.001ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.001ms!important; }
+}
+
+
+/* PRÓXIMOS INGRESOS: visibles en el mismo catálogo, pero no en stock */
+.card.is-soon .card-photo { background: #7d9171; }
+.soon-ribbon {
+  position: absolute; top: .7rem; left: .7rem; z-index: 2;
+  max-width: calc(100% - 1.4rem); padding: .42rem .63rem;
+  border-radius: 999px; border: 1px solid rgba(48,58,43,.34);
+  background: rgba(255,253,248,.94); color: var(--olive);
+  font-size: .61rem; font-weight: 800; letter-spacing: .055em;
+  line-height: 1.2; box-shadow: 0 2px 8px rgba(0,0,0,.11);
+}
+.status-soon {
+  color: #8a512e; background: #f6e8d7;
+  padding: .22rem .47rem; border-radius: 999px; white-space: normal;
+  line-height: 1.18; font-size: .62rem;
+}
+.detail-preorder {
+  margin: .25rem 0 1.05rem; padding: .72rem .85rem;
+  background: #f8ebd8; color: #68472d;
+  border-left: 4px solid var(--terracotta);
+  border-radius: 7px; font-size: .91rem; line-height: 1.42;
 }

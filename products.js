@@ -14,8 +14,8 @@ const CONFIG = {
   ubicacion: "El Colorado, Formosa",
 
   // Solo existen dos precios. Cambialos acá y se actualiza todo el sitio.
-  precioStandard: 16800,
-  precioPremium: 17800,
+  precioStandard: 17000,
+  precioPremium: 18000,
 
   // Tamaño que se muestra en la ficha si el producto no define otro.
   tamano: "Abierto: 45 cm × 24 cm"
@@ -30,8 +30,9 @@ const CONFIG = {
   categoria: filtro donde aparece → "estampados" | "colores" | "premium".
   tipo:      "standard" | "dual" | "velvet".
              dual y velvet cobran precioPremium; standard cobra precioStandard.
-  stock:     unidades reales. No se muestra el número, solo:
+  stock:     unidades reales en mano. 'Próximo ingreso' siempre usa stock 0.
              más de 1 → DISPONIBLE · 1 → ÚLTIMA UNIDAD · 0 → AGOTADO.
+  proximo:   true cuando el modelo está en camino. No suma al stock disponible.
   tamano:    (opcional) si algún modelo mide distinto, agregalo acá.
 */
 
@@ -42,27 +43,37 @@ const PRODUCTOS = [
 
   { nombre: "Camelia",   imagen: "images/camelia.jpg",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Orquídea",  imagen: "images/orquidea.jpg",  coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
-  { nombre: "Magnolia",  imagen: "images/magnolia.jpg",  coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
-  { nombre: "Marimonia", imagen: "images/marimonia.jpg", coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
-  { nombre: "Hibisco",   imagen: "images/hibisco.jpg",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
+  { nombre: "Magnolia",  imagen: "images/magnolia.jpg",  coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0, proximo: true },
+  { nombre: "Marimonia", imagen: "images/marimonia.jpg", coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0, proximo: true },
+  { nombre: "Hibisco",   imagen: "images/hibisco.jpg",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0, proximo: true },
   { nombre: "Azalea",    imagen: "images/azalea.jpg",    coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0 },
+  { nombre: "Azucena",   imagen: "images/azucena.webp",   coleccion: "Floré",     categoria: "estampados", tipo: "standard", stock: 0, proximo: true },
 
   { nombre: "Nairobi",   imagen: "images/nairobi.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
-  { nombre: "Tokio",     imagen: "images/tokio.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
+  { nombre: "Tokio",     imagen: "images/tokio.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0, proximo: true },
   { nombre: "Florencia", imagen: "images/florencia.jpg", coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Moscú",     imagen: "images/moscu.jpg",     coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
   { nombre: "Turquía",   imagen: "images/turquia.jpg",   coleccion: "Rave",      categoria: "estampados", tipo: "standard", stock: 0 },
+  { nombre: "Amsterdam", imagen: "images/amsterdam.webp", coleccion: "Rave", categoria: "estampados", tipo: "standard", stock: 0, proximo: true },
+  { nombre: "Kyoto",     imagen: "images/kyoto.webp",     coleccion: "Rave", categoria: "estampados", tipo: "standard", stock: 0, proximo: true },
+  { nombre: "Tromso",    imagen: "images/tromso.webp",    coleccion: "Rave", categoria: "estampados", tipo: "standard", stock: 0, proximo: true },
 
   // ---------- COLORES (lisos) ----------
-  { nombre: "Esmeralda", imagen: "images/esmeralda.jpg", coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
-  { nombre: "Rubí",      imagen: "images/rubi.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
-  { nombre: "Arena",     imagen: "images/arena.jpg",     coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
-  { nombre: "Tinto",     imagen: "images/tinto.jpg",     coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
-  { nombre: "Ónix",      imagen: "images/onix.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0 },
+  { nombre: "Esmeralda", imagen: "images/esmeralda.jpg", coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0, proximo: true },
+  { nombre: "Rubí",      imagen: "images/rubi.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0, proximo: true },
+  { nombre: "Arena",     imagen: "images/arena.jpg",     coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0, proximo: true },
+  { nombre: "Tinto",     imagen: "images/tinto.jpg",     coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0, proximo: true },
+  { nombre: "Ónix",      imagen: "images/onix.jpg",      coleccion: "Colores",   categoria: "colores",    tipo: "standard", stock: 0, proximo: true },
 
   // ---------- PREMIUM ----------
   // Nimbo es el ÚNICO Dual.
   { nombre: "Nimbo",     imagen: "images/nimbo.jpg",     coleccion: "Dual",      categoria: "premium",    tipo: "dual",     stock: 1 },
+  { nombre: "Brasa",     imagen: "images/brasa.webp",     coleccion: "Dual", categoria: "premium", tipo: "dual", stock: 0, proximo: true },
+  { nombre: "Índigo",    imagen: "images/indigo.webp",    coleccion: "Dual", categoria: "premium", tipo: "dual", stock: 0, proximo: true },
+  { nombre: "Onda",      imagen: "images/onda.webp",      coleccion: "Dual", categoria: "premium", tipo: "dual", stock: 0, proximo: true },
+  { nombre: "Cobre",     imagen: "images/cobre.webp",     coleccion: "Dual", categoria: "premium", tipo: "dual", stock: 0, proximo: true },
+  { nombre: "Oreo",      imagen: "images/oreo.webp",      coleccion: "Dual", categoria: "premium", tipo: "dual", stock: 0, proximo: true },
+  { nombre: "Nero",      imagen: "images/nero.webp",      coleccion: "Dual", categoria: "premium", tipo: "dual", stock: 0, proximo: true },
 
   // Velvet
   { nombre: "Ébano",     imagen: "images/ebano.jpg",     coleccion: "Velvet",    categoria: "premium",    tipo: "velvet",   stock: 6 },

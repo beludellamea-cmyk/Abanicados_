@@ -20,6 +20,7 @@
   const formatearPrecio = (n) => new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 0 }).format(n);
 
   function disponibilidad(p) {
+    if (p.proximo) return { texto: "Próximo ingreso", clase: "soon", agotado: false, proximo: true };
     if (p.stock <= 0) return { texto: "Agotado", clase: "out", agotado: true };
     if (p.stock === 1) return { texto: "Última unidad", clase: "last", agotado: false };
     return { texto: "Disponible", clase: "ok", agotado: false };
@@ -43,7 +44,9 @@
   }
 
   function linkWhatsApp(p) {
-    const texto = `Hola 👋 Vi el catálogo de Abanicados y quiero consultar por el abanico ${p.nombre}.`;
+    const texto = p.proximo
+      ? `Hola 👋 Vi el modelo ${p.nombre} en PRÓXIMO INGRESO de Abanicados y quiero consultar o reservar uno.`
+      : `Hola 👋 Vi el catálogo de Abanicados y quiero consultar por el abanico ${p.nombre}.`;
     return `https://wa.me/${whatsapp}?text=${encodeURIComponent(texto)}`;
   }
 
@@ -56,9 +59,10 @@
   function tarjetaHTML(p) {
     const d = disponibilidad(p);
     return `
-      <article class="card${d.agotado ? " is-out" : ""}">
+      <article class="card${d.agotado ? " is-out" : ""}${d.proximo ? " is-soon" : ""}">
         <button type="button" class="card-photo" data-detalle="${p._id}" aria-label="Ver ${escapar(p.nombre)}">
           <img src="${escapar(p.imagen)}" alt="Abanico ${escapar(p.nombre)}" decoding="async" onerror="this.style.display='none'">
+          ${d.proximo ? '<span class="soon-ribbon">PRÓXIMO INGRESO</span>' : ""}
         </button>
         <button type="button" class="card-body" data-detalle="${p._id}" aria-label="Ver detalles de ${escapar(p.nombre)}" style="border:0;background:none;width:100%;text-align:left;cursor:pointer">
           <h3 class="card-name">${escapar(p.nombre)}</h3>
@@ -73,7 +77,10 @@
   function render() {
     const lista = (filtroActual === "todos" ? PRODUCTOS : PRODUCTOS.filter((p) => p.categoria === filtroActual))
       .slice()
-      .sort((a, b) => Number(b.stock > 0) - Number(a.stock > 0));
+      .sort((a, b) => {
+        const rango = (p) => p.proximo ? 1 : (p.stock > 0 ? 0 : 2);
+        return rango(a) - rango(b);
+      });
     grid.innerHTML = lista.map(tarjetaHTML).join("");
     phrase.textContent = FRASES[filtroActual];
   }
@@ -117,6 +124,7 @@
         <h2 id="modal-title" class="detail-name">${escapar(p.nombre)}</h2>
         ${extra ? `<p class="detail-feature">${escapar(extra)}</p>` : ""}
         <p class="detail-price">${formatearPrecio(precioDe(p))}</p>
+        ${p.proximo ? '<p class="detail-preorder">Este modelo está en camino. Consultá por la fecha de llegada o pedí una reserva por WhatsApp.</p>' : ""}
         <dl class="detail-list">
           <div><dt>Disponibilidad</dt><dd>${escapar(d.texto)}</dd></div>
           <div><dt>Incluye</dt><dd>Abanico + funda</dd></div>
@@ -128,7 +136,7 @@
         <div class="detail-actions">
           ${d.agotado
             ? `<span class="action-primary disabled">AGOTADO</span>`
-            : `<a class="action-primary" href="${linkWhatsApp(p)}" target="_blank" rel="noopener">LO QUIERO 🪭</a>`}
+            : `<a class="action-primary" href="${linkWhatsApp(p)}" target="_blank" rel="noopener">${d.proximo ? "CONSULTAR / RESERVAR 🪭" : "LO QUIERO 🪭"}</a>`}
           <button type="button" class="action-secondary" data-share>COMPARTIR ESTE MODELO</button>
         </div>
       </div>`;
