@@ -10,49 +10,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Italiana&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=atelier-20261126-2">
+  <link rel="stylesheet" href="styles.css?v=intro-fan-20261126-3">
 </head>
 <body>
-  <a href="#catalogo" class="skip-link">Ir al catálogo</a>
-  <div class="announcement"><span class="announcement-star" aria-hidden="true">✦</span> UN ACCESORIO, MIL FORMAS DE BRILLAR <span class="announcement-star" aria-hidden="true">✦</span></div>
-  <header class="site-header">
-    <div class="nav-wrap container">
-      <a href="#inicio" class="logo" aria-label="Abanicados, ir al inicio">
-        <svg class="logo-fan" viewBox="0 0 64 54" aria-hidden="true">
-          <path d="M32 49 5 25Q16 10 32 7 48 10 59 25Z" fill="#bc7183" stroke="#b98c55" stroke-width="1.5" />
-          <path d="M32 49 7 25M32 49 18 12M32 49 32 7M32 49 46 12M32 49 57 25" fill="none" stroke="#f1d6a7" stroke-width="1.8" />
-          <path d="M5 25Q32 -7 59 25" fill="none" stroke="#e8c58b" stroke-width="2.7" />
-          <circle cx="32" cy="48" r="4" fill="#cda56c" stroke="#fff2df" />
-        </svg>
-        <span class="logo-word">ABANICADOS<small>UN ABANICO PARA CADA MOOD</small></span>
-      </a>
-      <nav class="nav-links" aria-label="Navegación principal">
-        <a href="#catalogo">Modelos</a>
-        <a href="#como-comprar">Cómo comprar</a>
-      </nav>
-      <a class="nav-contact" href="https://wa.me/5493704548426?text=Hola%2C%20quiero%20consultar%20por%20los%20abanicos%20de%20Abanicados" target="_blank" rel="noopener noreferrer">Escribinos <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
-
-  <main>
-    <section id="inicio" class="hero" aria-label="Bienvenida a Abanicados">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="hero-inner container">
-        <div class="hero-copy">
-          <div class="hero-overline"><span class="overline-rule"></span> ELEGANCIA EN MOVIMIENTO</div>
-          <h1>El detalle que <em>hace la diferencia.</em></h1>
-          <p class="hero-description">Hay accesorios que acompañan un look. Y otros que lo transforman. Encontrá ese abanico que va con vos.</p>
-          <div class="hero-cta">
-            <a href="#catalogo" class="btn btn-gold">Descubrí la colección <span aria-hidden="true">↗</span></a>
-            <a href="https://www.instagram.com/abanicados_/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Seguinos en Instagram</a>
-          </div>
-          <div class="hero-note"><span aria-hidden="true">✧</span> Diseñados para destacar, pensados para acompañarte.</div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-          <div class="art-light art-light-one">✦</div><div class="art-light art-light-two">✧</div><div class="art-light art-light-three">✧</div>
-          <div class="fan-stage">
-            <svg class="lux-fan" viewBox="0 0 600 440" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <!-- El abanico se abre en el centro y viaja hasta el logo. El catálogo funciona independientemente. -->
+  <div id="intro" class="intro-splash" aria-hidden="true">
+    <div class="intro-halo"></div>
+    <span class="intro-spark intro-spark-one">✦</span>
+    <span class="intro-spark intro-spark-two">✧</span>
+    <div class="intro-center">
+      <div id="intro-fan" class="intro-fan"><svg class="lux-fan intro-lux-fan" viewBox="0 0 600 440" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <defs>
                 <linearGradient id="fanRose" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#deafac"/><stop offset=".47" stop-color="#b96c7d"/><stop offset="1" stop-color="#733b56"/></linearGradient>
                 <linearGradient id="fanPlum" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a5687c"/><stop offset=".65" stop-color="#642d49"/><stop offset="1" stop-color="#3b2436"/></linearGradient>
@@ -121,9 +88,121 @@
                 <circle cx="300" cy="363" r="11" fill="#e7ca92" stroke="#9c7346" stroke-width="3"/>
                 <circle cx="300" cy="363" r="3" fill="#fdf0d3" stroke="none"/>
               </g>
+            </svg></div>
+      <div class="intro-brand">ABANICADOS</div>
+      <p class="intro-tagline">Un abanico para cada mood.</p>
+    </div>
+  </div>
+  <a href="#catalogo" class="skip-link">Ir al catálogo</a>
+  <div class="announcement"><span class="announcement-star" aria-hidden="true">✦</span> UN ACCESORIO, MIL FORMAS DE BRILLAR <span class="announcement-star" aria-hidden="true">✦</span></div>
+  <header class="site-header">
+    <div class="nav-wrap container">
+      <a href="#inicio" class="logo" aria-label="Abanicados, ir al inicio">
+        <svg class="logo-fan mini-lux-fan" viewBox="0 0 600 440" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="minifanRose" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#deafac"/><stop offset=".47" stop-color="#b96c7d"/><stop offset="1" stop-color="#733b56"/></linearGradient>
+                <linearGradient id="minifanPlum" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a5687c"/><stop offset=".65" stop-color="#642d49"/><stop offset="1" stop-color="#3b2436"/></linearGradient>
+                <linearGradient id="minifanGold" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#f4deba"/><stop offset="1" stop-color="#bd9161"/></linearGradient>
+                <filter id="minifanShadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#100c11" flood-opacity=".38"/></filter>
+              </defs>
+              <g class="fan-leaves" filter="url(#minifanShadow)">
+                <g class="fan-leaf" style="--fan-angle:-64deg;--leaf-delay:0ms">
+    <path d="M300 363 L259 116 Q300 101 341 116 Z" fill="url(#minifanPlum)" stroke="#e6c28e" stroke-width="2.3" />
+    <path d="M300 362 L300 116" fill="none" stroke="#e8cd9e" stroke-width="3.2" opacity=".90" />
+    <path d="M285 203 Q300 198 315 203 M287 185 Q300 180 313 185" fill="none" stroke="#ffe7be" stroke-width="1.6" opacity=".52" />
+    <circle cx="300" cy="137" r="3" fill="#f1d6ac" opacity=".78" />
+  </g>
+                <g class="fan-leaf" style="--fan-angle:-48deg;--leaf-delay:45ms">
+    <path d="M300 363 L259 116 Q300 101 341 116 Z" fill="url(#minifanRose)" stroke="#e6c28e" stroke-width="2.3" />
+    <path d="M300 362 L300 116" fill="none" stroke="#e8cd9e" stroke-width="3.2" opacity=".90" />
+    <path d="M285 203 Q300 198 315 203 M287 185 Q300 180 313 185" fill="none" stroke="#ffe7be" stroke-width="1.6" opacity=".52" />
+    <circle cx="300" cy="137" r="3" fill="#f1d6ac" opacity=".78" />
+  </g>
+                <g class="fan-leaf" style="--fan-angle:-32deg;--leaf-delay:90ms">
+    <path d="M300 363 L259 116 Q300 101 341 116 Z" fill="url(#minifanPlum)" stroke="#e6c28e" stroke-width="2.3" />
+    <path d="M300 362 L300 116" fill="none" stroke="#e8cd9e" stroke-width="3.2" opacity=".90" />
+    <path d="M285 203 Q300 198 315 203 M287 185 Q300 180 313 185" fill="none" stroke="#ffe7be" stroke-width="1.6" opacity=".52" />
+    <circle cx="300" cy="137" r="3" fill="#f1d6ac" opacity=".78" />
+  </g>
+                <g class="fan-leaf" style="--fan-angle:-16deg;--leaf-delay:135ms">
+    <path d="M300 363 L259 116 Q300 101 341 116 Z" fill="url(#minifanRose)" stroke="#e6c28e" stroke-width="2.3" />
+    <path d="M300 362 L300 116" fill="none" stroke="#e8cd9e" stroke-width="3.2" opacity=".90" />
+    <path d="M285 203 Q300 198 315 203 M287 185 Q300 180 313 185" fill="none" stroke="#ffe7be" stroke-width="1.6" opacity=".52" />
+    <circle cx="300" cy="137" r="3" fill="#f1d6ac" opacity=".78" />
+  </g>
+                <g class="fan-leaf" style="--fan-angle:0deg;--leaf-delay:180ms">
+    <path d="M300 363 L259 116 Q300 101 341 116 Z" fill="url(#minifanPlum)" stroke="#e6c28e" stroke-width="2.3" />
+    <path d="M300 362 L300 116" fill="none" stroke="#e8cd9e" stroke-width="3.2" opacity=".90" />
+    <path d="M285 203 Q300 198 315 203 M287 185 Q300 180 313 185" fill="none" stroke="#ffe7be" stroke-width="1.6" opacity=".52" />
+    <circle cx="300" cy="137" r="3" fill="#f1d6ac" opacity=".78" />
+  </g>
+                <g class="fan-leaf" style="--fan-angle:16deg;--leaf-delay:225ms">
+    <path d="M300 363 L259 116 Q300 101 341 116 Z" fill="url(#minifanRose)" stroke="#e6c28e" stroke-width="2.3" />
+    <path d="M300 362 L300 116" fill="none" stroke="#e8cd9e" stroke-width="3.2" opacity=".90" />
+    <path d="M285 203 Q300 198 315 203 M287 185 Q300 180 313 185" fill="none" stroke="#ffe7be" stroke-width="1.6" opacity=".52" />
+    <circle cx="300" cy="137" r="3" fill="#f1d6ac" opacity=".78" />
+  </g>
+                <g class="fan-leaf" style="--fan-angle:32deg;--leaf-delay:270ms">
+    <path d="M300 363 L259 116 Q300 101 341 116 Z" fill="url(#minifanPlum)" stroke="#e6c28e" stroke-width="2.3" />
+    <path d="M300 362 L300 116" fill="none" stroke="#e8cd9e" stroke-width="3.2" opacity=".90" />
+    <path d="M285 203 Q300 198 315 203 M287 185 Q300 180 313 185" fill="none" stroke="#ffe7be" stroke-width="1.6" opacity=".52" />
+    <circle cx="300" cy="137" r="3" fill="#f1d6ac" opacity=".78" />
+  </g>
+                <g class="fan-leaf" style="--fan-angle:48deg;--leaf-delay:315ms">
+    <path d="M300 363 L259 116 Q300 101 341 116 Z" fill="url(#minifanRose)" stroke="#e6c28e" stroke-width="2.3" />
+    <path d="M300 362 L300 116" fill="none" stroke="#e8cd9e" stroke-width="3.2" opacity=".90" />
+    <path d="M285 203 Q300 198 315 203 M287 185 Q300 180 313 185" fill="none" stroke="#ffe7be" stroke-width="1.6" opacity=".52" />
+    <circle cx="300" cy="137" r="3" fill="#f1d6ac" opacity=".78" />
+  </g>
+                <g class="fan-leaf" style="--fan-angle:64deg;--leaf-delay:360ms">
+    <path d="M300 363 L259 116 Q300 101 341 116 Z" fill="url(#minifanPlum)" stroke="#e6c28e" stroke-width="2.3" />
+    <path d="M300 362 L300 116" fill="none" stroke="#e8cd9e" stroke-width="3.2" opacity=".90" />
+    <path d="M285 203 Q300 198 315 203 M287 185 Q300 180 313 185" fill="none" stroke="#ffe7be" stroke-width="1.6" opacity=".52" />
+    <circle cx="300" cy="137" r="3" fill="#f1d6ac" opacity=".78" />
+  </g>
+              </g>
+              <g class="fan-base" fill="none" stroke-linecap="round">
+                <path d="M300 363 286 420" stroke="#d0ad75" stroke-width="6"/>
+                <path d="M300 363 313 420" stroke="#b58c5e" stroke-width="6"/>
+                <circle cx="300" cy="363" r="11" fill="#e7ca92" stroke="#9c7346" stroke-width="3"/>
+                <circle cx="300" cy="363" r="3" fill="#fdf0d3" stroke="none"/>
+              </g>
             </svg>
+        <span class="logo-word">ABANICADOS<small>UN ABANICO PARA CADA MOOD</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#catalogo">Modelos</a>
+        <a href="#como-comprar">Cómo comprar</a>
+      </nav>
+      <a class="nav-contact" href="https://wa.me/5493704548426?text=Hola%2C%20quiero%20consultar%20por%20los%20abanicos%20de%20Abanicados" target="_blank" rel="noopener noreferrer">Escribinos <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero" aria-label="Bienvenida a Abanicados">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner container">
+        <div class="hero-copy">
+          <div class="hero-overline"><span class="overline-rule"></span> ELEGANCIA EN MOVIMIENTO</div>
+          <h1>El detalle que <em>hace la diferencia.</em></h1>
+          <p class="hero-description">Hay accesorios que acompañan un look. Y otros que lo transforman. Encontrá ese abanico que va con vos.</p>
+          <div class="hero-cta">
+            <a href="#catalogo" class="btn btn-gold">Descubrí la colección <span aria-hidden="true">↗</span></a>
+            <a href="https://www.instagram.com/abanicados_/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Seguinos en Instagram</a>
           </div>
-          <span class="hero-art-caption">TU ESTILO · TU ABANICO</span>
+          <div class="hero-note"><span aria-hidden="true">✧</span> Diseñados para destacar, pensados para acompañarte.</div>
+        </div>
+        <div class="hero-art hero-showcase" aria-label="Modelos de abanicos destacados">
+          <span class="showcase-spark showcase-spark-a" aria-hidden="true">✧</span>
+          <span class="showcase-spark showcase-spark-b" aria-hidden="true">✦</span>
+          <figure class="showcase-photo showcase-primary">
+            <img src="images/ebano.jpg" alt="Abanico modelo Ébano" loading="eager" decoding="async">
+            <figcaption>ÉBANO <span>· VELVET</span></figcaption>
+          </figure>
+          <figure class="showcase-photo showcase-secondary">
+            <img src="images/champagne.jpg" alt="Abanico modelo Champagne" loading="lazy" decoding="async">
+          </figure>
+          <span class="showcase-caption">ESTILO EN CADA DETALLE</span>
         </div>
       </div>
       <div class="hero-bottom-line" aria-hidden="true"><span></span><span>ABANICADOS</span><span></span></div>
@@ -181,7 +260,7 @@
       <div id="modal-content"></div>
     </div>
   </dialog>
-  <script src="products.js?v=atelier-20261126-2"></script>
-  <script src="script.js?v=atelier-20261126-2"></script>
+  <script src="products.js?v=intro-fan-20261126-3"></script>
+  <script src="script.js?v=intro-fan-20261126-3"></script>
 </body>
 </html>
