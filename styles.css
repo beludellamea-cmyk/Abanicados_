@@ -322,3 +322,8 @@ button{font:inherit}
   .logo .logo-fan.mini-lux-fan{opacity:1!important;animation:none!important}
   .intro-splash .fan-leaf{transform:rotate(var(--fan-angle))!important;animation:none!important;opacity:1!important}
 }
+
+/* Catálogo inmediatamente después del encabezado: sin portada ni sección intermedia. */
+.catalog-section{padding-top:40px;padding-bottom:76px}
+.nav-wrap{min-height:80px}
+@media(max-width:760px){.catalog-section{padding-top:26px;padding-bottom:48px}.nav-wrap{min-height:72px}}
